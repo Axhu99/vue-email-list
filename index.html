@@ -12,9 +12,11 @@
 </head>
 <body>
     <div id="root">
-        <div v-if="isLoading" class="h-100 d-flex justify-content-center align-items-center">
+        <!-- la schermata di caricamento, mentre recupero i dati che mi sevono -->
+        <div v-if="emails.length !== tot" class="h-100 d-flex justify-content-center align-items-center">
             <i class="fas fa-spinner fa-5x fa-spin"></i>
         </div>
+        <!-- appena ho recuperato TUTTI i dati mostro in pagina  -->
         <div v-else>
             <ul>
                 <li v-for="email in emails">{{email}}</li>
